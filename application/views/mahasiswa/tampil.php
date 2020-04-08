@@ -4,7 +4,7 @@
 </head>
 <body>
   <h1>Data Siswa</h1><hr>
-  <a href="<?php echo base_url("mahasiswa/input/form"); ?>">Import Data</a><br><br>
+  <a href="<?php echo base_url("mahasiswa/input/tambah"); ?>">Import Data</a><br><br>
   <table border="1" cellpadding="8">
   <tr>
     <th>NIM</th>
