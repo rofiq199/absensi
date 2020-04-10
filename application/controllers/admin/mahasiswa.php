@@ -9,11 +9,11 @@ class mahasiswa extends CI_Controller {
       }
     
 	public function index()
-	{   
+	{     
+        $data['prodi']= $this->m_admin->prodi();
         $data['mahasiswa'] = $this->m_admin->list_mahasiswa();
         $this->load->view('admin/header'); 
         $this->load->view('admin/list_mahasiswa',$data);
         $this->load->view('admin/footer'); 
-        
 	}
 }

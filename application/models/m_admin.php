@@ -4,5 +4,8 @@ class m_admin extends CI_Model {
   public function list_mahasiswa(){
     return $this->db->get('mahasiswa')->result();
   }
+  public function prodi() {
+    return $this->db->get('prodi')->result();
+  }
 }
   
