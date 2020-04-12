@@ -15,5 +15,24 @@ class mahasiswa extends CI_Controller {
         $this->load->view('admin/header'); 
         $this->load->view('admin/list_mahasiswa',$data);
         $this->load->view('admin/footer'); 
-	}
+  }
+  function add(){
+    $nim = $this->input->post('nim');
+    $nama = $this->input->post('nama');
+    $golongan = $this->input->post('golongan');
+    $password = $this->input->post('password');
+    $prodi = $this->input->post('prodi');
+    $semester = $this->input->post('semester');
+
+    $data = array(
+      'nim' => $nim,
+      'kode_prodi' => $prodi,
+      'nama_mahasiswa' => $nama,
+      'password_mahasiswa' => $password,
+      'golongan' => $golongan,
+      'semester' => $semester
+      );
+    $this->m_admin->add($data,'mahasiswa');
+    redirect(base_url('admin/mahasiswa'));
+  }
 }

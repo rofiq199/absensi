@@ -23,13 +23,14 @@ class absensi extends CI_Controller
 			$user= $this->m_login->cek_login("mahasiswa",$where)->result_array();
 			foreach ($user as $key ) {
 			$data_session = array(
-				'nama' => $username,
+				'username' => $username,
+				'nama' => $key['nama_mahasiswa'],
 				'semester' => $key['semester'],
 				'golongan' => $key['golongan']
 				);
 			}
 			$this->session->set_userdata($data_session);
-			redirect(base_url('mahasiswa/jadwal'));
+			redirect(base_url('admin/mahasiswa'));
 			// $this->load->view('home');
  
 		}else{

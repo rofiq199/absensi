@@ -2,16 +2,16 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">List Mahasiswa</h4>
+						<h4 class="page-title">List Dosen</h4>
 					</div>
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
-										<h4 class="card-title">Tambah Mahasiswa</h4>
+										<h4 class="card-title">Tambah Dosen</h4>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
 											<i class="fa fa-plus"></i>
-											Tambah Mahasiswa
+											Tambah Dosen
 										</button>
 									</div>
 								</div>
@@ -25,7 +25,7 @@
 														<span class="fw-mediumbold">
 														Tambah</span> 
 														<span class="fw-light">
-															Mahasiswa
+															Dosen
 														</span>
 													</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -34,42 +34,22 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form action="<?= base_url('admin/mahasiswa/add');?>" method="POST">
+													<form>
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nim</label>
-																	<input type="text" name="nim" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<input type="text" class="form-control" placeholder="Masukkan Nim Mahasiswa">
 																</div>
 															</div>
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>Nama</label>
-																	<input name="nama" type="text" class="form-control" placeholder="fill name">
-																</div>
-															</div>
-															<div class="col-sm-12">
-																<div class="form-group form-group-default">
-																	<label>Golongan</label>
-																	<input type="text" name="golongan" class="form-control" placeholder="Masukkan Nim Mahasiswa">
-																</div>
-															</div>
-															<div class="col-sm-12">
-																<div class="form-group form-group-default">
-																	<label>Password</label>
-																	<input type="text" name="password" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<label>Name</label>
+																	<input id="addName" type="text" class="form-control" placeholder="fill name">
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
-																	<label>Kode Prodi</label>
-																	<select name="prodi" class="form-control" >
-																	<?php foreach ($prodi as $a) {
-																	?>
-																	<option value="<?=$a->kode_prodi ?>"><?= $a->nama_prodi?></option>>
-																	<?php }?>
-																	</select>
-																	
 																</div>
 															</div>
 															<div class="col-md-6">
@@ -88,44 +68,47 @@
 																</div>
 															</div>
 														</div>
+													</form>
 												</div>
 												<div class="modal-footer no-bd">
-													<input type="submit" value="tambah" class="btn btn-primary">
+													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
 													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
-												</form>
 											</div>
 										</div>
 									</div>
-
 									<div class="table-responsive">
 										<table id="add-row" class="display table table-striped table-hover" >
 											<thead>
 												<tr>
-													<th>Nim</th>
-													<th>Nama</th>
-													<th>Kode Prodi</th>
-													<th>Golongan/Semester</th>
+													<th>Nama Matkul</th>
+													<th>Waktu</th>
+													<th>Hari</th>
+													<th>Ruangan</th>
+													<th>Golongan/SMT</th>
 													<th style="width: 10%">Action</th>
 												</tr>
 											</thead>
 											<tfoot>
 												<tr>
-													<th>Name</th>
-													<th>Position</th>
-													<th>Office</th>
+												<th>Nama Matkul</th>
+													<th>Waktu</th>
+													<th>Hari</th>
+													<th>Ruangan</th>
+													<th>Golongan/SMT</th>
 													<th>Action</th>
 												</tr>
 											</tfoot>
 											<tbody>
 												<?php 
-												foreach ($mahasiswa as $c) {
+												foreach ($jadwal as $c) {
 												?>
 												<tr>
-													<td><?=$c->nim?></td>
-													<td><?=$c->nama_mahasiswa?></td>
-													<td><?=$c->kode_prodi?></td>
-													<td><?=$c->golongan?>/<?=$c->semester?></td>
+													<td><?=$c->nama_matkul?> <?=$c->kode_prodi?></td>
+													<td><?=$c->waktu_mulai?>-<?=$c->waktu_selesai?></td>
+													<td><?=  $c->nama_hari?></td>
+													<td><?= $c->ruangan ?></td>
+													<td><?= $c->golongan?>/<?=$c->semester?></td>
 													<td>
 														<div class="form-button-action">
 															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">

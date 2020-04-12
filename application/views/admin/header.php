@@ -243,7 +243,10 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
+									<?php
+									echo
+									$this->session->userdata('nama');
+									?>
 									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
@@ -359,6 +362,21 @@
 							</a>
 							<div class="collapse show" id="tables">
 								<ul class="nav nav-collapse">
+									<li>
+										<a href="<?= base_url('admin/mahasiswa')?>">
+											<span class="sub-item">Mahasiswa</span>
+										</a>
+									</li>
+									<li>
+										<a href="<?= base_url('admin/dosen')?>">
+											<span class="sub-item">Dosen</span>
+										</a>
+									</li>
+									<li>
+										<a href="<?= base_url('admin/matkul')?>">
+											<span class="sub-item">Matkul</span>
+										</a>
+									</li>
 									<li>
 										<a href="../tables/tables.html">
 											<span class="sub-item">Basic Table</span>

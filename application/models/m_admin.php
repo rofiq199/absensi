@@ -22,5 +22,25 @@ class m_admin extends CI_Model {
   public function tampildosen(){
     return $this->db->get('dosen')->result();
   }
+  public function tampiljadwal(){
+    return $this->db->from('jadwal')
+    ->join('waktu', 'jadwal.kode_waktu=waktu.kode_waktu')
+    ->join('matkul', 'jadwal.kode_matkul=matkul.kode_matkul')
+    ->join('hari', 'jadwal.kode_hari=hari.kode_hari')
+    ->get()
+    ->result();
+  }
+  function hapus_data($where,$table){
+    $this->db->where($where);
+    $this->db->delete($table);
+      }
+  
+      function add($data,$table){
+      $this->db->insert($table,$data);
+      }
+      function update_data($where,$data,$table){
+      $this->db->where($where);
+      $this->db->update($table,$data);
+    }	
 }
   
