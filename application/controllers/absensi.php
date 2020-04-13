@@ -24,6 +24,7 @@ class absensi extends CI_Controller
 			foreach ($user as $key ) {
 			$data_session = array(
 				'username' => $username,
+				'kode_prodi' => $key['kode_prodi'],
 				'nama' => $key['nama_mahasiswa'],
 				'semester' => $key['semester'],
 				'golongan' => $key['golongan']
