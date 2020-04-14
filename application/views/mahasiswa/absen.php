@@ -3,7 +3,9 @@
 				<div class="page-inner">
 					<div class="page-header">
 						<h4 class="page-title">List Dosen</h4>
-						<?php print_r($matkul); ?>
+						<?php print_r($absen);
+						print_r($alpa)
+						  ?>
 					</div>
 						<div class="col-md-12">
 							<div class="card">

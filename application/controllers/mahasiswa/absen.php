@@ -25,10 +25,14 @@ class absen extends CI_Controller {
         //     ['nama'=>'tober','kelas'=>$key['kode_matkul']]
         // ] ;}
             
-        $parameter = array('nim' => $nim,
+        $absen = array('nim' => $nim,
+                    'status' => 'H'
                         );
-        $data['absen']= $this->m_absen->tampilabsen('absen',$parameter);
-   
+        $data['absen']= $this->m_absen->tampilabsen('absen',$absen);
+        $alpa = array('nim' => $nim,
+                    'status' => 'A'
+                        );
+        $data['alpa']= $this->m_absen->tampilabsen('absen',$alpa);
         $this->load->view('admin/header'); 
         $this->load->view('mahasiswa/absen',$data);
         $this->load->view('admin/footer'); 

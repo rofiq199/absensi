@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class mahasiswa extends CI_Controller {
     public function __construct(){
         parent::__construct();
-        
+        $this->load->helper('download');
         $this->load->model('m_admin');
       }
     
@@ -17,13 +17,12 @@ class mahasiswa extends CI_Controller {
         $this->load->view('admin/footer'); 
   }
   function add(){
-    $nim = $this->input->post('nim');
-    $nama = $this->input->post('nama');
-    $golongan = $this->input->post('golongan');
-    $password = $this->input->post('password');
-    $prodi = $this->input->post('prodi');
-    $semester = $this->input->post('semester');
-
+      $nim = $this->input->post('nim');
+      $nama = $this->input->post('nama');
+      $golongan = $this->input->post('golongan');
+      $password = $this->input->post('password');
+      $prodi = $this->input->post('prodi');
+      $semester = $this->input->post('semester');
     $data = array(
       'nim' => $nim,
       'kode_prodi' => $prodi,
@@ -34,5 +33,62 @@ class mahasiswa extends CI_Controller {
       );
     $this->m_admin->add($data,'mahasiswa');
     redirect(base_url('admin/mahasiswa'));
+    }
+  
+  public function download(){
+    force_download('excel/format_mahasiswa.xlsx',NULL);
   }
+  public function upload(){
+      // Load plugin PHPExcel nya
+      include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+
+      $config['upload_path'] = realpath('excel');
+      $config['allowed_types'] = 'xlsx|xls|csv';
+      $config['max_size'] = '10000';
+      $config['encrypt_name'] = true;
+
+      $this->load->library('upload', $config);
+
+      if (!$this->upload->do_upload()) {
+
+          //upload gagal
+          $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES IMPORT GAGAL!</b> '.$this->upload->display_errors().'</div>');
+          //redirect halaman
+          redirect('admin/mahasiswa');
+
+      } else {
+
+          $data_upload = $this->upload->data();
+
+          $excelreader     = new PHPExcel_Reader_Excel2007();
+          $loadexcel         = $excelreader->load('excel/'.$data_upload['file_name']); // Load file yang telah diupload ke folder excel
+          $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
+
+          $data = array();
+
+          $numrow = 1;
+          foreach($sheet as $row){
+                          if($numrow > 1){
+                              array_push($data, array(
+                                'nim'=>$row['A'], // Insert data nis dari kolom A di excel
+                                'kode_prodi'=>$row['B'], // Insert data nama dari kolom B di excel
+                                'nama_mahasiswa'=>$row['C'], // Insert data jenis kelamin dari kolom C di excel
+                                'password_mahasiswa'=>$row['D'], // Insert data alamat dari kolom D di excel
+                                'golongan'=>$row['E'],
+                                'semester'=>$row['F'],
+                              ));
+                  }
+              $numrow++;
+          }
+          $this->db->insert_batch('mahasiswa', $data);
+          //delete file from server
+          unlink(realpath('excel/'.$data_upload['file_name']));
+
+          //upload success
+          $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES IMPORT BERHASIL!</b> Data berhasil diimport!</div>');
+          //redirect halaman
+          redirect(base_url('admin/mahasiswa'));
+
+      }
+    }
 }

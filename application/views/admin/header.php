@@ -5,6 +5,7 @@
 	<title>Absensi</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="<?php echo base_url('assets/img/icon.ico');?>" type="image/x-icon"/>
+	<link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/font-awesome.min.css')?>" />
 	
 	<!-- Fonts and icons -->
 	<script src="<?php echo base_url('assets/js/plugin/webfont/webfont.min.js');?>"></script>
@@ -236,44 +237,6 @@
 			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user">
-						<div class="avatar-sm float-left mr-2">
-							<img src="<?php echo base_url('assets/img/profile.jpg')?>" alt="..." class="avatar-img rounded-circle">
-						</div>
-						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									<?php
-									echo
-									$this->session->userdata('nama');
-									?>
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
-
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">

@@ -9,6 +9,10 @@
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 										<h4 class="card-title">Tambah Mahasiswa</h4>
+										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#import">
+											<i class="fa fa-plus"></i>
+											Import Mahasiswa
+										</button>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
 											<i class="fa fa-plus"></i>
 											Tambah Mahasiswa
@@ -16,6 +20,48 @@
 									</div>
 								</div>
 								<div class="card-body">
+
+								<div class="modal fade" id="import" tabindex="-1" role="dialog" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header no-bd">
+													<h5 class="modal-title">
+														<span class="fw-mediumbold">
+														Import</span> 
+														<span class="fw-light">
+															Mahasiswa
+														</span>
+													</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<p class="small">Isi data Mahasiswa dengan benar</p>
+													<form action="<?= base_url('admin/mahasiswa/upload');?>" method="POST" enctype="multipart/form-data">
+														<div class="row">
+														<div class="col-md-6 pr-0">
+																<div class="form-group form-group-default">
+																	<label>Excel</label>
+																	<input type="file" name="userfile" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																</div>
+															</div>
+															<div class="col-md-6 ">
+																<div class="form-group form-group-default">
+																	<center><a href="<?=base_url('admin/mahasiswa/download')?>"> Silahkan Download Format Excel</a></center>
+																</div>
+															</div>
+												<div class="modal-footer no-bd">
+													<input type="submit" value="Import" class="btn btn-primary">
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+												</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									</div>
+									</div>
+									</div>
 									<!-- Modal -->
 									<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-hidden="true">
 										<div class="modal-dialog" role="document">
@@ -34,30 +80,30 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form action="<?= base_url('admin/mahasiswa/add');?>" method="POST">
+													<form action="<?= base_url('admin/mahasiswa/add');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nim</label>
-																	<input type="text" name="nim" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<input type="text" name="nim" class="form-control"   placeholder="Masukkan Nim Mahasiswa">
 																</div>
 															</div>
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nama</label>
-																	<input name="nama" type="text" class="form-control" placeholder="fill name">
+																	<input name="nama" type="text" class="form-control"   placeholder="Masukkan Nama Mahasiswa">
 																</div>
 															</div>
-															<div class="col-sm-12">
+															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
 																	<label>Golongan</label>
-																	<input type="text" name="golongan" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<input type="text" name="golongan" class="form-control"   placeholder="Masukkan Golongan Mahasiswa">
 																</div>
 															</div>
-															<div class="col-sm-12">
+															<div class="col-md-6">
 																<div class="form-group form-group-default">
 																	<label>Password</label>
-																	<input type="text" name="password" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<input type="text" name="password"  class="form-control" placeholder="Masukkan Password Mahasiswa">
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
@@ -90,8 +136,8 @@
 														</div>
 												</div>
 												<div class="modal-footer no-bd">
-													<input type="submit" value="tambah" class="btn btn-primary">
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													<input type="submit" value="Tambah" class="btn btn-primary">
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
 												</div>
 												</form>
 											</div>

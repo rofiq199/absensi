@@ -5,7 +5,6 @@ class m_absen extends CI_Model {
     return $this->db->get_where($tabel,$where);
   }
   public function tampilabsen($tabel,$where){
-      $this->db->group_by('kode_matkul');
     return $this->db->get_where($tabel,$where)->result_array();
   }
 }
