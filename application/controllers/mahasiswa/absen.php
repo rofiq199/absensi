@@ -16,25 +16,13 @@ class absen extends CI_Controller {
         $where = array('kode_prodi' => $prodi,
                         'semester' => $semester
                         );
-        $data['matkul']= $this->m_absen->absensi('matkul',$where)->result_array();
-        // foreach ($data as $key) {
-            
-        
-        // $tampil['kelas'] = [
-        //     ['nama'=>'saya','kelas'=>$key['kode_matkul']],
-        //     ['nama'=>'tober','kelas'=>$key['kode_matkul']]
-        // ] ;}
-            
-        $absen = array('nim' => $nim,
-                    'status' => 'H'
-                        );
-        $data['absen']= $this->m_absen->tampilabsen('absen',$absen);
-        $alpa = array('nim' => $nim,
-                    'status' => 'A'
-                        );
-        $data['alpa']= $this->m_absen->tampilabsen('absen',$alpa);
+        $data['matkul']= $this->m_absen->absensi('matkul',$where)->result();
+        $data['pertemuan']= $this->m_absen->pertemuan()->result();       
+        $hasil = $this->m_absen->rekap();
+        $data['rekap'] = $this->m_absen->rekap();
         $this->load->view('admin/header'); 
         $this->load->view('mahasiswa/absen',$data);
         $this->load->view('admin/footer'); 
-	}
+    }
+  
 }

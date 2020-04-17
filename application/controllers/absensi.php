@@ -8,7 +8,7 @@ class absensi extends CI_Controller
 	}
     public function index()
     {
-        $this->load->view('v_login');
+        $this->load->view('admin/login');
     }
 
     function aksi_login(){

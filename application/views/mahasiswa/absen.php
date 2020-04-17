@@ -2,19 +2,17 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">List Dosen</h4>
-						<?php print_r($absen);
-						print_r($alpa)
-						  ?>
+						<h4 class="page-title">Rekap Absen</h4>
+						
 					</div>
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
-										<h4 class="card-title">Tambah Dosen</h4>
+										<h4 class="card-title">Tambah Absen</h4>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
 											<i class="fa fa-plus"></i>
-											Tambah Dosen
+											Tambah Absen
 										</button>
 									</div>
 								</div>
@@ -84,36 +82,32 @@
 										<table id="add-row" class="display table table-striped table-hover" >
 											<thead>
 												<tr>
-													<th>NIP</th>
-													<th>Kode Prodi</th>
-													<th>Dosen</th>
-													<th style="width: 10%">Action</th>
+													<th>Minggu Ke</th>
+													<?php foreach ($pertemuan as $a) {
+													
+														?>
+													<th class="mx-0"><?= $a->minggu ?></th>
+													<?php }?>
 												</tr>
 											</thead>
-											<tfoot>
-												<tr>
-                                                <th>Kode Matkul</th>
-													<th>Kode Prodi</th>
-													<th>Dosen</th>
-													<th>Action</th>
-												</tr>
-											</tfoot>
 											<tbody>
-											
+											<?php foreach ($matkul as $e ) {
+												
+											 ?>
 												<tr>
-													
-													<td>
-														<div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-																<i class="fa fa-edit"></i>
-															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-																<i class="fa fa-times"></i>
-															</button>
-														</div>
-													</td>
+												<td class="mx-0"><?=$e->nama_matkul ?></td>
+												<?php 
+												foreach ($pertemuan as $p){
+												
+													echo '<td class="mx-0">';
+													foreach ($rekap as $absen){
+													if($e->kode_matkul==$absen->kode_matkul && $p->minggu==$absen->pertemuan){
+														echo $absen->status;
+													}
+												}
+													echo '</td>';}?>
 												</tr>
-												<?php ?>
+											<?php } ?>
 											</tbody>
 										</table>
 									</div>

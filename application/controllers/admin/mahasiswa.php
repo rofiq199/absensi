@@ -91,4 +91,29 @@ class mahasiswa extends CI_Controller {
 
       }
     }
+    function update(){
+      $kode_barang = $this->input->post('kode_barang1');
+      $nama_supplier = $this->input->post('nama_supplier1');
+      $nama_barang = $this->input->post('nama_barang1');
+      $stok = $this->input->post('stok1');
+      $harga = $this->input->post('harga1');
+    
+      $data = array(
+        'kode_supplier' => $nama_supplier,
+        'nama_barang' => $nama_barang,
+        'harga' => $harga,
+        'stok' => $stok
+        );
+    
+      $where = array(
+        'kd_barang' => $kode_barang
+      );
+      $this->m_barang->update_data($where,$data,'barang');
+      redirect(base_url('barang'));
+    }
+    function hapus($nim){
+      $where = array('nim' => $nim);
+      $this->m_admin->hapus($where,'mahasiswa');
+      redirect(base_url('admin/mahasiswa'));
+    }
 }

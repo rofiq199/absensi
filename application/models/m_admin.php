@@ -2,7 +2,10 @@
 class m_admin extends CI_Model {
   // Fungsi untuk menampilkan semua data gambar
   public function list_mahasiswa(){
-    return $this->db->get('mahasiswa')->result();
+    return $this->db->from('mahasiswa')
+    ->join('prodi', 'mahasiswa.kode_prodi=prodi.kode_prodi')
+    ->get()
+    ->result();
   }
   public function prodi() {
     return $this->db->get('prodi')->result();
@@ -30,7 +33,7 @@ class m_admin extends CI_Model {
     ->get()
     ->result();
   }
-  function hapus_data($where,$table){
+  function hapus($where,$table){
     $this->db->where($where);
     $this->db->delete($table);
       }
@@ -38,7 +41,7 @@ class m_admin extends CI_Model {
       function add($data,$table){
       $this->db->insert($table,$data);
       }
-      function update_data($where,$data,$table){
+      function update($where,$data,$table){
       $this->db->where($where);
       $this->db->update($table,$data);
     }	
