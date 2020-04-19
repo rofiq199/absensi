@@ -33,48 +33,45 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form>
+													<p class="small">Isi data Dosen dengan benar</p>
+													<form action="<?= base_url('admin/dosen/add');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>Nim</label>
-																	<input type="text" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<label>NIP</label>
+																	<input type="text" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
 																</div>
 															</div>
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>Name</label>
-																	<input id="addName" type="text" class="form-control" placeholder="fill name">
+																	<label>Nama Dosen</label>
+																	<input name="nama_dosen" type="text" class="form-control" placeholder="Masukkan nama Dosen">
 																</div>
 															</div>
-															<div class="col-md-6 pr-0">
+															<div class="col-sm-12">
 																<div class="form-group form-group-default">
+																	<label>Password Dosen</label>
+																	<input name="password_dosen" type="text" class="form-control" placeholder="Masukkan Pass Dosen">
 																</div>
 															</div>
-															<div class="col-md-6">
+															<div class="col-sm-12 pr-0">
 																<div class="form-group form-group-default">
-																	<label>Semester</label>
-																	<select name="semester" class="form-control" >
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
-																	<option value="6">6</option>
-																	<option value="7">7</option>
-																	<option value="8">8</option>
-																	</select>
+																<label>Prodi</label>
+																<select name="prodi" class="form-control">
+																<?php foreach ($prodi as $a ) {
+																	echo "<option value='$a->kode_prodi'>$a->nama_prodi</option>" ;
+																} ?>
+																</select>
 																</div>
 															</div>
 														</div>
-													</form>
 												</div>
 												<div class="modal-footer no-bd">
-													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
+													<input type="submit" value="Tambah" class="btn btn-primary">
 													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
+											</form>
 										</div>
 									</div>
 									<div class="table-responsive">
@@ -108,7 +105,7 @@
 															<button type="button" data-toggle="tooltip" data-toggle="modal" data-target="tambah" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+															<button type="button" onclick="window.location.href='<?= base_url('admin/dosen/hapus/'.$c->nip); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
