@@ -25,7 +25,7 @@
 														<span class="fw-mediumbold">
 														Tambah</span> 
 														<span class="fw-light">
-															Mahasiswa
+															Matkul
 														</span>
 													</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -33,23 +33,39 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form>
+													<p class="small">Isi Matkul</p>
+													<form action="<?= base_url('admin/matkul/add');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>Nim</label>
-																	<input type="text" class="form-control" placeholder="Masukkan Nim Mahasiswa">
+																	<label>Kode Matkul</label>
+																	<input type="text" name="kode_matkul" class="form-control" placeholder="Masukkan Kode Matkul">
 																</div>
 															</div>
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>Name</label>
-																	<input id="addName" type="text" class="form-control" placeholder="fill name">
+																	<label>Nama Matkul</label>
+																	<input  type="text" name="nama_matkul" class="form-control" placeholder="Masukkan Nama Matkul">
 																</div>
+															</div>
+															<div class="col-sm-12">
+															<div class="form-group form-group-default">
+															<label>Prodi</label>
+															<select name="prodi" class="form-control">
+															<?php foreach ($prodi as $a ) {
+																	echo "<option value='$a->kode_prodi'>$a->nama_prodi</option>" ;
+																} ?>
+															</select>
+															</div>
 															</div>
 															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
+																<label>Dosen</label>
+																<select name="dosen" class="form-control">
+																<?php foreach ($dosen as $b ) {
+																	echo "<option value='$b->nip'>$b->nama_dosen</option>" ;
+																} ?>
+																</select>
 																</div>
 															</div>
 															<div class="col-md-6">
@@ -68,13 +84,14 @@
 																</div>
 															</div>
 														</div>
-													</form>
+													
 												</div>
 												<div class="modal-footer no-bd">
-													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
+													<input type="submit"  value="Tambah" class="btn btn-primary">
 													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
+											</form>
 										</div>
 									</div>
 									<div class="table-responsive">
@@ -108,15 +125,98 @@
 													<td><?= $c->nama_dosen ?></td>
 													<td>
 														<div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+															<button type="button" data-toggle="modal" data-target="#edit<?=$c->kode_matkul;?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+															<button type="button"  onclick="window.location.href='<?= base_url('admin/matkul/hapus/'.$c->kode_matkul); ?>'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="hapus">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
 													</td>
 												</tr>
+									<!-- Modal -->
+									<div class="modal fade" id="edit<?=$c->kode_matkul?>" tabindex="-1" role="dialog" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header no-bd">
+													<h5 class="modal-title">
+														<span class="fw-mediumbold">
+														Tambah</span> 
+														<span class="fw-light">
+															Matkul
+														</span>
+													</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<p class="small">Isi Matkul</p>
+													<form action="<?= base_url('admin/matkul/update');?>" method="POST">
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group form-group-default">
+																	<label>Kode Matkul</label>
+																	<input type="text" name="kode_matkul1" value="<?= $c->kode_matkul ?>" class="form-control" placeholder="Masukkan Kode Matkul">
+																</div>
+															</div>
+															<div class="col-sm-12">
+																<div class="form-group form-group-default">
+																	<label>Nama Matkul</label>
+																	<input  type="text" name="nama_matkul1" value="<?= $c->nama_matkul ?>" class="form-control" placeholder="Masukkan Nama Matkul">
+																</div>
+															</div>
+															<div class="col-sm-12">
+															<div class="form-group form-group-default">
+															<label>Prodi</label>
+															<select name="prodi1" class="form-control">
+															<option selected="selected" value="<?=$c->kode_prodi ?>"><?=$c->nama_prodi ?></option>
+															<?php foreach ($prodi as $a ) {
+																if($c->kode_prodi != $a->kode_prodi){
+																	echo "<option value='$a->kode_prodi'>$a->nama_prodi</option>" ;
+																} }?>
+															</select>
+															</div>
+															</div>
+															<div class="col-md-6 pr-0">
+																<div class="form-group form-group-default">
+																<label>Dosen</label>
+																<select name="dosen1" class="form-control">
+																<option selected="selected" value="<?=$c->nip ?>"><?=$c->nama_dosen ?></option>
+																<?php foreach ($dosen as $b ) {
+																	if($c->nip != $b->nip){
+																	echo "<option value='$b->nip'>$b->nama_dosen</option>" ;
+																}} ?>
+																</select>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group form-group-default">
+																	<label>Semester</label>
+																	<select name="semester1" class="form-control" >
+																	<option selected="selected" value="<?=$c->semester ?>"><?=$c->semester ?></option>
+																	<option value="1">1</option>
+																	<option value="2">2</option>
+																	<option value="3">3</option>
+																	<option value="4">4</option>
+																	<option value="5">5</option>
+																	<option value="6">6</option>
+																	<option value="7">7</option>
+																	<option value="8">8</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													
+												</div>
+												<div class="modal-footer no-bd">
+													<input type="submit"  value="Update" class="btn btn-primary">
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+											</form>
+										</div>
+									</div>
 												<?php }?>
 											</tbody>
 										</table>

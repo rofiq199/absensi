@@ -19,6 +19,7 @@ class m_admin extends CI_Model {
   public function tampilmatkul(){
     return $this->db->from('matkul')
     ->join('dosen', 'matkul.nip=dosen.nip')
+    ->join('prodi','matkul.kode_prodi=prodi.kode_prodi')
     ->get()
     ->result();
   }

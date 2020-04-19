@@ -37,7 +37,7 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Isi data Mahasiswa dengan benar</p>
+													<p class="small">Import data Mahasiswa sesuai dengan format yang ditentukan</p>
 													<form action="<?= base_url('admin/mahasiswa/upload');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 														<div class="col-md-6 pr-0">
@@ -203,41 +203,42 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form action="<?= base_url('admin/mahasiswa/add');?>" method="POST" enctype="multipart/form-data">
+													<form action="<?= base_url('admin/mahasiswa/update');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nim</label>
-																	<input type="text" name="nim" class="form-control"  value="<?= $c->nim ?>"  placeholder="Masukkan Nim Mahasiswa">
+																	<input type="text" name="nim1" class="form-control"  value="<?= $c->nim ?>"  placeholder="Masukkan Nim Mahasiswa">
 																</div>
 															</div>
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nama</label>
-																	<input name="nama" type="text" class="form-control"  value="<?= $c->nama_mahasiswa?>" placeholder="Masukkan Nama Mahasiswa">
+																	<input name="nama1" type="text" class="form-control"  value="<?= $c->nama_mahasiswa?>" placeholder="Masukkan Nama Mahasiswa">
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
 																	<label>Golongan</label>
-																	<input type="text" name="golongan" class="form-control" value="<?=$c->golongan?>"   placeholder="Masukkan Golongan Mahasiswa">
+																	<input type="text" name="golongan1" class="form-control" value="<?=$c->golongan?>"   placeholder="Masukkan Golongan Mahasiswa">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-default">
 																	<label>Password</label>
-																	<input type="text" name="password"  class="form-control" value="<?=$c->password_mahasiswa?>" placeholder="Masukkan Password Mahasiswa">
+																	<input type="text" name="password1"  class="form-control" value="<?=$c->password_mahasiswa?>" placeholder="Masukkan Password Mahasiswa">
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
 																	<label>Kode Prodi</label>
-																	<select name="prodi" class="form-control" >
+																	<select name="prodi1" class="form-control" >
 																	<option selected="selected" value="<?=$c->kode_prodi ?>"><?=$c->nama_prodi ?></option>
 																	<?php foreach ($prodi as $a) {
+																		if($c->kode_prodi != $a->kode_prodi){
 																	?>
 																	<option value="<?=$a->kode_prodi ?>"><?= $a->nama_prodi?></option>>
-																	<?php }?>
+																	<?php }}?>
 																	</select>
 																	
 																</div>
@@ -245,7 +246,7 @@
 															<div class="col-md-6">
 																<div class="form-group form-group-default">
 																	<label>Semester</label>
-																	<select name="semester" class="form-control" >
+																	<select name="semester1" class="form-control" >
 																	<option selected="selected" value="<?=$c->semester ?>"><?=$c->semester ?></option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -261,7 +262,7 @@
 														</div>
 												</div>
 												<div class="modal-footer no-bd">
-													<input type="submit" value="Tambah" class="btn btn-primary">
+													<input type="submit" value="Update" class="btn btn-primary">
 													<button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
 												</div>
 												</form>

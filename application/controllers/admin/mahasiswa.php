@@ -92,24 +92,26 @@ class mahasiswa extends CI_Controller {
       }
     }
     function update(){
-      $kode_barang = $this->input->post('kode_barang1');
-      $nama_supplier = $this->input->post('nama_supplier1');
-      $nama_barang = $this->input->post('nama_barang1');
-      $stok = $this->input->post('stok1');
-      $harga = $this->input->post('harga1');
+      $nim = $this->input->post('nim1');
+      $nama = $this->input->post('nama1');
+      $golongan = $this->input->post('golongan1');
+      $password = $this->input->post('password1');
+      $prodi = $this->input->post('prodi1');
+      $semester = $this->input->post('semester1');
     
       $data = array(
-        'kode_supplier' => $nama_supplier,
-        'nama_barang' => $nama_barang,
-        'harga' => $harga,
-        'stok' => $stok
+        'kode_prodi' => $prodi,
+        'nama_mahasiswa' => $nama,
+        'password_mahasiswa' => $password,
+        'golongan' => $golongan,
+        'semester' => $semester
         );
     
       $where = array(
-        'kd_barang' => $kode_barang
+        'nim' => $nim
       );
-      $this->m_barang->update_data($where,$data,'barang');
-      redirect(base_url('barang'));
+      $this->m_admin->update($where,$data,'mahasiswa');
+      redirect(base_url('admin/mahasiswa'));
     }
     function hapus($nim){
       $where = array('nim' => $nim);
