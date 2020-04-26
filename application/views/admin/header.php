@@ -341,6 +341,11 @@
 										</a>
 									</li>
 									<li>
+										<a href="<?= base_url('admin/prodi')?>">
+											<span class="sub-item">Prodi</span>
+										</a>
+									</li>
+									<li>
 										<a href="../tables/tables.html">
 											<span class="sub-item">Basic Table</span>
 										</a>

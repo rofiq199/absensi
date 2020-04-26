@@ -30,9 +30,27 @@ class dosen extends CI_Controller {
   $this->m_admin->add($data,'dosen');
   redirect(base_url('admin/dosen'));
   }
+  function update(){
+    $nip = $this->input->post('nip');
+    $nama_dosen = $this->input->post('nama_dosen');
+    $prodi = $this->input->post('prodi');
+    $password = $this->input->post('password_dosen');
+  
+    $data = array(
+      'password_dosen' => $password,
+      'kode_prodi' => $prodi,
+      'nama_dosen' => $nama_dosen
+      );
+  
+    $where = array(
+      'nip' => $nip
+    );
+    $this->m_admin->update($where,$data,'dosen');
+    redirect(base_url('admin/dosen'));
+  }
   function hapus($nip){
     $where = array('nip' => $nip);
     $this->m_admin->hapus($where,'dosen');
-    redirect(base_url('admin/matkul'));
+    redirect(base_url('admin/dosen'));
   }
 }
