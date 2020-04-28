@@ -157,7 +157,7 @@
 																<?php foreach ($prodi as $a ) {
 																	if($c->kode_prodi != $a->kode_prodi){
 																	echo "<option value='$a->kode_prodi'>$a->nama_prodi</option>" ;
-																} ?>
+																} }?>
 																</select>
 																</div>
 															</div>

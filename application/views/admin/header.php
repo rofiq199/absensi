@@ -304,7 +304,7 @@
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
-								<p>Forms</p>
+								<p>Jadwal</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="forms">
@@ -314,16 +314,26 @@
 											<span class="sub-item">Basic Form</span>
 										</a>
 									</li>
+									<li>
+										<a href="<?= base_url('admin/jadwal') ?>">
+											<span class="sub-item">Lihat Jadwal</span>
+										</a>
+									</li>
+									<li>
+										<a href="<?= base_url('admin/sesi') ?>">
+											<span class="sub-item">Sesi</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item active submenu">
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
-								<p>Tables</p>
+								<p>Master</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="tables">
+							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="<?= base_url('admin/mahasiswa')?>">

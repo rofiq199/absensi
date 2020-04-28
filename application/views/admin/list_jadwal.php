@@ -2,7 +2,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">List Dosen</h4>
+						<h4 class="page-title">List Jadwal</h4>
 					</div>
 						<div class="col-md-12">
 							<div class="card">
@@ -11,7 +11,7 @@
 										<h4 class="card-title">Tambah Dosen</h4>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
 											<i class="fa fa-plus"></i>
-											Tambah Dosen
+											Tambah Jadwal
 										</button>
 									</div>
 								</div>
@@ -33,7 +33,7 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Isi data Mahasiswa dengan benar</p>
+													<p class="small">Isi data dengan benar</p>
 													<form>
 														<div class="row">
 															<div class="col-sm-12">
@@ -49,6 +49,7 @@
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
+															<label>Matkul</label>
 																<div class="form-group form-group-default">
 																</div>
 															</div>
