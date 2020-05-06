@@ -19,6 +19,18 @@ class absensi extends CI_Controller
 			'password_mahasiswa' => $password
 			);
 		$cek = $this->m_login->cek_login("mahasiswa",$where)->num_rows();
+
+		$wheredosen = array(
+			'nip' => $username,
+			'password_dosen' => $password
+			);
+		$cekdosen = $this->m_login->cek_login("dosen",$wheredosen)->num_rows();
+
+		$whereadmin = array(
+			'username' => $username,
+			'password' => $password
+			);
+		$cekadmin = $this->m_login->cek_login("admin",$whereadmin)->num_rows();
 		if($cek > 0){
 			$user= $this->m_login->cek_login("mahasiswa",$where)->result_array();
 			foreach ($user as $key ) {
@@ -33,7 +45,31 @@ class absensi extends CI_Controller
 			$this->session->set_userdata($data_session);
 			redirect(base_url('admin/mahasiswa'));
 			// $this->load->view('home');
- 
+		//login dosen
+		}else if($cekdosen > 0){
+			$dosen= $this->m_login->cek_login("dosen",$wheredosen)->result_array();
+			foreach ($dosen as $key ) {
+			$data_session = array(
+				'username' => $username,
+				'kode_prodi' => $key['kode_prodi'],
+				'nama' => $key['nama_dosen'],
+				);
+				}
+				$this->session->set_userdata($data_session);
+				redirect(base_url('admin/dosen'));
+				// $this->load->view('home');
+		//login admin
+		}else if($cekadmin > 0){
+		$admin= $this->m_login->cek_login("admin",$whereadmin)->result_array();
+		foreach ($admin as $key ) {
+		$data_session = array(
+		'username' => $username,
+		);
+		}
+		$this->session->set_userdata($data_session);
+		redirect(base_url('admin/jadwal'));
+		// $this->load->view('home');
+		
 		}else{
 			echo "Username dan password salah !";
 		}
