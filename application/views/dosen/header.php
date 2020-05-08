@@ -356,11 +356,6 @@
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/pengajar')?>">
-											<span class="sub-item">Pengajar</span>
-										</a>
-									</li>
-									<li>
 										<a href="../tables/tables.html">
 											<span class="sub-item">Basic Table</span>
 										</a>

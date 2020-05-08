@@ -10,10 +10,12 @@ class pengajar extends CI_Controller {
     
 	public function index()
 	{     
-        $data['jurusan'] = $this->m_admin->get('jurusan');
+        $data['pengajar'] = $this->m_admin->tampilpengajar();
+        $data['dosen']= $this->m_admin->tampildosen();
+        $data['matkul']=$this->m_admin->tampilmatkul();
         $data['prodi']= $this->m_admin->tampilprodi();
         $this->load->view('admin/header'); 
-        $this->load->view('admin/list_prodi',$data);
+        $this->load->view('admin/list_pengajar',$data);
         $this->load->view('admin/footer'); 
   }
 }

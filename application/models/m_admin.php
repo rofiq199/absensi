@@ -18,6 +18,13 @@ function get($id){
     ->get()
     ->result();
 }
+public function tampilpengajar(){
+  return $this->db->from('pengajar')
+  ->join('dosen', 'pengajar.nip=dosen.nip')
+  ->join('matkul','pengajar.kode_matkul=matkul.kode_matkul')
+  ->get()
+  ->result();
+}
   public function tampilmatkul(){
     return $this->db->from('matkul')
     ->join('dosen', 'matkul.nip=dosen.nip')
