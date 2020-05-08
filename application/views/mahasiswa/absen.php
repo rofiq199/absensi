@@ -82,12 +82,14 @@
 										<table id="add-row" class="display table table-striped table-hover" >
 											<thead>
 												<tr>
-													<th>Minggu Ke</th>
-													<?php foreach ($pertemuan as $a) {
-													
-														?>
-													<th class="mx-0"><?= $a->minggu ?></th>
-													<?php }?>
+												<th rowspan="2">Matkul</th>
+													<th colspan="17"><center>Minggu Ke</center></th>
+												</tr>
+												<tr>
+												<?php foreach ($pertemuan as $a) {
+													?>
+												<th class="mx-0"><?= $a->minggu ?></th>
+												<?php }?>
 												</tr>
 											</thead>
 											<tbody>

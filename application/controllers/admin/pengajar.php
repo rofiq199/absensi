@@ -8,8 +8,7 @@ class pengajar extends CI_Controller {
         $this->load->model('m_admin');
       }
     
-	public function index()
-	{     
+	public function index(){     
         $data['pengajar'] = $this->m_admin->tampilpengajar();
         $data['dosen']= $this->m_admin->tampildosen();
         $data['matkul']=$this->m_admin->tampilmatkul();

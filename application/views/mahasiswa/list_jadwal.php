@@ -5,7 +5,7 @@
 						<h4 class="page-title">List Dosen</h4>
 						<?php 
 						echo '<pre>';
-						print_r($hari); ?>
+						print_r($jadwal); ?>
 					</div>
 						<div class="col-md-12">
 							<div class="card">
@@ -82,8 +82,8 @@
 											<thead>
 												<tr>
 													<th>No</th>
-													<th>Hari</th>
 													<th>Matkul</th>
+													<th>Hari</th>
 													<th>Jam</th>
 													<th>Dosen</th>
 													<th style="width: 10%">Ruangan</th>
@@ -100,18 +100,17 @@
 											<tbody>
 												<?php 
 												$no=1;
-												foreach ($hari as $h) {
 												foreach ($jadwal as $c) {
 												?>
 												<tr>
 													<td><?=$no++?></td>
-													<td><?=$h->nama_hari?></td>
 													<td><?= $c->nama_matkul ?></td>
+													<td><?= $c->nama_hari?></td>
 													<td><?= $c->waktu_mulai ?>-<?= $c->waktu_selesai ?></td>
 													<td><?= $c->nama_dosen ?></td>
 													<td><?= $c->ruangan ?></td>
 												</tr>
-												<?php }}?>
+												<?php }?>
 											</tbody>
 										</table>
 									</div>

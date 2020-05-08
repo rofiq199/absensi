@@ -24,6 +24,7 @@ class jadwal extends CI_Controller {
             );
         $data['hari']= $this->m_jadwal->hari('hari');
         $data['jadwal'] = $this->m_jadwal->tampil_jadwal("tampil_jadwal",$where)->result();
+        $data['jadwal1']=$this->m_jadwal->jadwal();
         $this->load->view('admin/header');
         $this->load->view('mahasiswa/list_jadwal',$data);
         $this->load->view('admin/footer');
