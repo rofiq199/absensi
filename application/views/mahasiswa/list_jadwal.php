@@ -3,9 +3,6 @@
 				<div class="page-inner">
 					<div class="page-header">
 						<h4 class="page-title">List Dosen</h4>
-						<?php 
-						echo '<pre>';
-						print_r($jadwal); ?>
 					</div>
 						<div class="col-md-12">
 							<div class="card">
@@ -89,14 +86,6 @@
 													<th style="width: 10%">Ruangan</th>
 												</tr>
 											</thead>
-											<tfoot>
-												<tr>
-                                                <th>NIP</th>
-													<th>Kode Prodi</th>
-													<th>Dosen</th>
-													<th>Action</th>
-												</tr>
-											</tfoot>
 											<tbody>
 												<?php 
 												$no=1;

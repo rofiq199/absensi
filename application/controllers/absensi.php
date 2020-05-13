@@ -43,7 +43,7 @@ class absensi extends CI_Controller
 				);
 			}
 			$this->session->set_userdata($data_session);
-			redirect(base_url('admin/mahasiswa'));
+			redirect(base_url('mahasiswa/absen'));
 			// $this->load->view('home');
 		//login dosen
 		}else if($cekdosen > 0){
@@ -56,7 +56,7 @@ class absensi extends CI_Controller
 				);
 				}
 				$this->session->set_userdata($data_session);
-				redirect(base_url('admin/dosen'));
+				redirect(base_url('dosen/matkul'));
 				// $this->load->view('home');
 		//login admin
 		}else if($cekadmin > 0){
