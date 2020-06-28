@@ -8,7 +8,6 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
-										<h4 class="card-title">Tambah Jadwal</h4>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
 											<i class="fa fa-plus"></i>
 											Tambah Jadwal
@@ -22,8 +21,8 @@
 											<div class="modal-content">
 												<div class="modal-header no-bd">
 													<h5 class="modal-title">
-														<span class="fw-mediumbold">
-														Tambah</span> 
+														<span>
+														<font color="white">Tambah</font></span> 
 														<span class="fw-light">
 															Jadwal
 														</span>

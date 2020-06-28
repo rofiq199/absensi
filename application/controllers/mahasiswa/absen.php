@@ -20,9 +20,9 @@ class absen extends CI_Controller {
         $data['pertemuan']= $this->m_absen->pertemuan()->result();       
         $hasil = $this->m_absen->rekap();
         $data['rekap'] = $this->m_absen->rekap();
-        $this->load->view('admin/header'); 
+        $this->load->view('mahasiswa/header'); 
         $this->load->view('mahasiswa/absen',$data);
-        $this->load->view('admin/footer'); 
+        $this->load->view('mahasiswa/footer'); 
     }
   
 }
