@@ -46,6 +46,12 @@ public function tampilpengajar(){
     ->get()
     ->result();
   }
+    function select($tabel){
+      return $this->db->get($tabel);
+    }
+    function show($tabel,$where){
+    return $this->db->get_where($tabel,$where);
+    }
   function hapus($where,$table){
     $this->db->where($where);
     $this->db->delete($table);

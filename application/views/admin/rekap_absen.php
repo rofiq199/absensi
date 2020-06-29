@@ -28,17 +28,17 @@
 												</tr>
 											</thead>
 											<tbody>
-											<?php foreach ($matkul as $e ) {
+											<?php foreach ($mahasiswa as $e ) {
 												
 											 ?>
 												<tr>
-												<td class="mx-0"><?=$e->nama_matkul ?></td>
+												<td class="mx-0"><?=$e->nama_mahasiswa ?></td>
 												<?php 
 												foreach ($pertemuan as $p){
 												
 													echo '<td class="mx-0">';
 													foreach ($rekap as $absen){
-													if($e->kode_matkul==$absen->kode_matkul && $p->minggu==$absen->pertemuan){
+													if($e->nim==$absen->nim && $p->minggu==$absen->pertemuan){
 														echo $absen->status;
 													}
 												}

@@ -263,7 +263,7 @@
 							<div class="collapse" id="rekapabsen">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="../sidebar-style-1.html">
+										<a href="<?=base_url('admin/rekap') ?>">
 											<span class="sub-item">Rekap Absen</span>
 										</a>
 									</li>
