@@ -34,9 +34,16 @@
 											<tbody>
                                             <?php 
                                             foreach ($prodi as $a) {
-                                                echo "<tr><td>".$a->nama_prodi."</td></tr>";
-                                            }
-                                            ?>
+												?>
+                                               <tr>
+											   <td><?=$a->nama_prodi?></td>
+											   <?php for ($i=1; $i<=8 ; $i++) { 
+											   ?>
+											   <td><a href="<?php echo base_url("admin/rekap/show/".$a->kode_prodi."/".$i)?>"><?=$a->kode_prodi?><?=$i;?></a></td>
+											   <?php }?>
+											   </tr>
+                                            
+										<?php }?>
 											</tbody>
 										</table>
 									</div>

@@ -10,10 +10,11 @@ class matkul extends CI_Controller {
     
 	public function index()
 	{     
+    $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['prodi']= $this->m_admin->tampilprodi();
         $data['dosen']= $this->m_admin->tampildosen();
         $data['matkul']= $this->m_admin->tampilmatkul();
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$x); 
         $this->load->view('admin/list_matkul',$data);
         $this->load->view('admin/footer'); 
   }

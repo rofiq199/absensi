@@ -9,10 +9,10 @@ class mahasiswa extends CI_Controller {
       }
     
 	public function index()
-	{     
+	{      $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['prodi']= $this->m_admin->prodi();
         $data['mahasiswa'] = $this->m_admin->list_mahasiswa();
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$x); 
         $this->load->view('admin/list_mahasiswa',$data);
         $this->load->view('admin/footer'); 
   }

@@ -9,10 +9,10 @@ class dosen extends CI_Controller {
       }
     
 	public function index()
-	{     
+	{      $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['prodi']=$this->m_admin->tampilprodi();
         $data['dosen']= $this->m_admin->tampildosen();
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$X); 
         $this->load->view('admin/list_dosen',$data);
         $this->load->view('admin/footer'); 
   }

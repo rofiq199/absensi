@@ -262,6 +262,14 @@
 							</a>
 							<div class="collapse" id="rekapabsen">
 								<ul class="nav nav-collapse">
+									<?php foreach ($jurusan as $a) {
+									?>
+									<li>
+										<a href="<?=base_url('admin/rekap/index/'.$a->kode_jurusan);?>">
+											<span class="sub-item"><?=$a->nama_jurusan?></span>
+										</a>
+									</li>
+									<?php } ?>
 									<li>
 										<a href="<?=base_url('admin/rekap') ?>">
 											<span class="sub-item">Rekap Absen</span>

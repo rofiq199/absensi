@@ -10,9 +10,10 @@ class prodi extends CI_Controller {
     
 	public function index()
 	{     
+    $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['jurusan'] = $this->m_admin->get('jurusan');
         $data['prodi']= $this->m_admin->tampilprodi();
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$x); 
         $this->load->view('admin/list_prodi',$data);
         $this->load->view('admin/footer'); 
   }

@@ -10,11 +10,12 @@ class jadwal extends CI_Controller {
     
 	public function index()
 	{     
+    $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['matkul']=$this->m_admin->get('matkul');
         $data['waktu']=$this->m_admin->get('waktu');
         $data['hari']=$this->m_admin->get('hari');
         $data['jadwal']= $this->m_admin->tampiljadwal();
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$x); 
         $this->load->view('admin/list_jadwal',$data);
         $this->load->view('admin/footer'); 
   }
