@@ -2,17 +2,13 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">List Dosen</h4>
 					</div>
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 										<h4 class="card-title">Jadwal</h4>
-										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#tambah">
-											<i class="fa fa-plus"></i>
-											Tambah Dosen
-										</button>
+										
 									</div>
 								</div>
 								<div class="card-body">
