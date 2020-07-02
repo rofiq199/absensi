@@ -10,6 +10,14 @@
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 										<h4 class="card-title">Rekap Absen</h4>
+										<?php  
+											$kode_matkul = $this->uri->segment('4');
+											$golongan = $this->uri->segment('5');
+											$semester = $this->uri->segment('6');?>
+										<button class="btn btn-primary btn-round ml-auto" onclick="window.location.href='<?php echo base_url('admin/rekap_absen/export/'.$kode_matkul.'/'.$golongan.'/'.$semester.'/') ?>'">
+											<i class="fa fa-plus"></i>
+											Export Pdf
+										</button>
 									</div>
 								</div>
 								<div class="card-body">
