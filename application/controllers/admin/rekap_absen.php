@@ -40,7 +40,7 @@ class rekap_absen extends CI_Controller {
         $data['pertemuan']= $this->m_admin->select('pertemuan')->result();       
         $data['rekap'] = $this->m_admin->show('absen',$where1)->result();
 
-        $pdf = new FPDF('L', 'mm','Letter');
+        $pdf = new FPDF('L', 'mm','A4');
 
         $pdf->AddPage();
 
@@ -50,10 +50,10 @@ class rekap_absen extends CI_Controller {
 
         $pdf->SetFont('Arial','B',10);
         $pdf->Cell(8,12,'No',1,0,'C');
-        $pdf->Cell(60,12,'Nama Mahasiswa',1,0,'C');
+        $pdf->Cell(80,12,'Nama Mahasiswa',1,0,'C');
         $pdf->Cell(160,6,'minggu',1,1,'C');
         $pdf->Cell(8,6,'',0,0,'C');
-        $pdf->Cell(60,6,'',0,0,'C');
+        $pdf->Cell(80,6,'',0,0,'C');
         
         foreach ($data['pertemuan'] as $key) {
             $pdf->Cell(10,6,$key->minggu,1,0,'C');
@@ -64,19 +64,20 @@ class rekap_absen extends CI_Controller {
         $no=1;
         foreach ($data['mahasiswa'] as $a) {
             $pdf->Cell(8,6,$no,1,0,'C');
-            $pdf->Cell(60,6,$a->nama_mahasiswa,1,0,'C');
+            $pdf->Cell(80,6,$a->nama_mahasiswa,1,0,'C');
             $no++;
             foreach ($data['pertemuan'] as $b) {
                 
                 foreach ($data['rekap'] as $c) {
                     if($a->nim==$c->nim && $b->minggu==$c->pertemuan){
-                        $pdf->Cell(10,6,$c->status,0,0,'C');
+                        $pdf->Cell(10,6,$c->status,1,0,'C');
                     }
-                
+                 
                 }
             }
             $pdf->Cell(15,6,'',0,1,'C');
         }
+        $pdf->Cell(248,0,'',1,1,'C');
         // $barang = $this->db->get('barang')->result();
         // $no=0;
         // foreach ($barang as $data){
