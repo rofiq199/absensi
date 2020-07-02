@@ -10,10 +10,6 @@
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 										<h4 class="card-title">List Matkul</h4>
-										<?php 
-										echo "<pre>";
-										print_r($hak);
-										 ?>
 									</div>
 								</div>
 								<div class="card-body">

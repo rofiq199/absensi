@@ -20,7 +20,7 @@ function get($id){
 }
 public function tampilpengajar(){
   return $this->db->from('pengajar')
-  ->join('dosen', 'pengajar.nip=dosen.nip')
+  ->join('dosen', 'pengajar.pengajar=dosen.nip')
   ->join('matkul','pengajar.kode_matkul=matkul.kode_matkul')
   ->get()
   ->result();

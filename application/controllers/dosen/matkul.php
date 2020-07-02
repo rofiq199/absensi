@@ -53,9 +53,9 @@ class matkul extends CI_Controller {
     public function tampil($id){
         $where=array('id' =>$id );
         $data['matkul']=$this->m_dosen->get_where('qrdata',$where)->result();
-        // $this->load->view('dosen/header'); 
+        $this->load->view('dosen/header'); 
         $this->load->view('dosen/tampil',$data);
-        // $this->load->view('dosen/footer'); 
+        $this->load->view('dosen/footer'); 
     }
     public function uri(){
         echo $this->uri->segment('4')."<br>";
