@@ -9,9 +9,9 @@ class sesi extends CI_Controller {
       }
     
 	public function index()
-	{     
+	{      $x['jurusan']=$this->m_admin->select('jurusan')->result();
         $data['waktu']=$this->m_admin->get('waktu');
-        $this->load->view('admin/header'); 
+        $this->load->view('admin/header',$x); 
         $this->load->view('admin/list_sesi',$data);
         $this->load->view('admin/footer'); 
   }
