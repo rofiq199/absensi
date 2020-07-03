@@ -56,7 +56,7 @@ class MatkulDos extends CI_Controller
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
-        redirect('dosen/matkul/tampil/' . $id); //redirect ke pegawai usai simpan data
+        redirect('dosen/MatkulDos/tampil/' . $id); //redirect ke pegawai usai simpan data
     }
     public function tampil($id)
     {
