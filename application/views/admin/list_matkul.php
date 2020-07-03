@@ -34,7 +34,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi Matkul</p>
-													<form action="<?= base_url('admin/matkul/add');?>" method="POST">
+													<form action="<?= base_url('admin/datamatkul/add');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
@@ -128,7 +128,7 @@
 															<button type="button" data-toggle="modal" data-target="#edit<?=$c->kode_matkul;?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button"  onclick="window.location.href='<?= base_url('admin/matkul/hapus/'.$c->kode_matkul); ?>'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="hapus">
+															<button type="button"  onclick="window.location.href='<?= base_url('admin/datamatkul/hapus/'.$c->kode_matkul); ?>'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="hapus">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
@@ -152,7 +152,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi Matkul</p>
-													<form action="<?= base_url('admin/matkul/update');?>" method="POST">
+													<form action="<?= base_url('admin/datamatkul/update');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">

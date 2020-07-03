@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Absensi</title>
+	<title>SIP POLIJE</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="<?php echo base_url('assets/img/icon.ico');?>" type="image/x-icon"/>
-	<link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/font-awesome.min.css')?>" />
-	
+	<!-- <link rel="icon" href="<?php echo base_url('assets/img/icon.ico'); ?>" type="image/x-icon" /> -->
+	<link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/font-awesome.min.css') ?>" />
+
 	<!-- Fonts and icons -->
-	<script src="<?php echo base_url('assets/js/plugin/webfont/webfont.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/plugin/webfont/webfont.min.js'); ?>"></script>
 	<script>
 		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['<?php echo base_url("assets/css/fonts.min.css")?>']},
+			google: {
+				"families": ["Lato:300,400,700,900"]
+			},
+			custom: {
+				"families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['<?php echo base_url("assets/css/fonts.min.css") ?>']
+			},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -20,19 +26,22 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/atlantis.min.css');?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/atlantis.min.css'); ?>">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/demo.css');?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/demo.css'); ?>">
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
-				
-				<a href="../index.html" class="logo">
-				<span class="fw-mediumbold"> <strong><font color="white">SIP POLIJE</font></strong></span>
+
+				<a href="<?= base_url('admin/datajadwal') ?>" class="logo">
+					<span class="fw-mediumbold"> <strong>
+							<font color="white">SIP POLIJE</font>
+						</strong></span>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -50,22 +59,39 @@
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-				
+
 				<div class="container-fluid">
-					
-				<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li>
-						<button type="button" onclick="window.location.href='<?= base_url('absensi/logout') ?>'" class="btn btn-danger">Logout</button>
-						</li>
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="<?php echo base_url('assets/img/profile.png') ?>" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="<?php echo base_url('assets/img/profile.png') ?>" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4><?php echo  $this->session->userdata("nama") ?></h4>
+												<p class="text-muted"><?php echo  $this->session->userdata("username") ?></p><a href="<?= base_url('Auth/logout') ?>" class="btn btn-xs btn-secondary btn-sm">Logout</a>
+											</div>
+										</div>
+									</li>
+								</div>
 							</ul>
+						</li>
+					</ul>
 				</div>
 			</nav>
 			<!-- End Navbar -->
-        </div>
-        
+		</div>
+
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">
-			
+
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<ul class="nav nav-primary">
@@ -85,11 +111,11 @@
 								<ul class="nav nav-collapse">
 									<?php foreach ($jurusan as $a) {
 									?>
-									<li>
-										<a href="<?=base_url('admin/rekap/index/'.$a->kode_jurusan);?>">
-											<span class="sub-item"><?=$a->nama_jurusan?></span>
-										</a>
-									</li>
+										<li>
+											<a href="<?= base_url('admin/datarekap/index/' . $a->kode_jurusan); ?>">
+												<span class="sub-item"><?= $a->nama_jurusan ?></span>
+											</a>
+										</li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -103,12 +129,12 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('admin/jadwal') ?>">
+										<a href="<?= base_url('admin/datajadwal') ?>">
 											<span class="sub-item">Lihat Jadwal</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/sesi') ?>">
+										<a href="<?= base_url('admin/datasesi') ?>">
 											<span class="sub-item">Sesi</span>
 										</a>
 									</li>
@@ -124,32 +150,32 @@
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('admin/mahasiswa')?>">
+										<a href="<?= base_url('admin/datamahasiswa') ?>">
 											<span class="sub-item">Mahasiswa</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/dosen')?>">
+										<a href="<?= base_url('admin/datadosen') ?>">
 											<span class="sub-item">Dosen</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/matkul')?>">
+										<a href="<?= base_url('admin/datamatkul') ?>">
 											<span class="sub-item">Matkul</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/prodi')?>">
+										<a href="<?= base_url('admin/dataprodi') ?>">
 											<span class="sub-item">Prodi</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/jurusan')?>">
+										<a href="<?= base_url('admin/datajurusan') ?>">
 											<span class="sub-item">Jurusan</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/pengajar')?>">
+										<a href="<?= base_url('admin/datapengajar') ?>">
 											<span class="sub-item">Pengajar</span>
 										</a>
 									</li>

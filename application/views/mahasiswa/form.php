@@ -21,7 +21,7 @@
   <br>
   
   <!-- Buat sebuah tag form dan arahkan action nya ke controller ini lagi -->
-  <form method="post" action="<?php echo base_url("mahasiswa/input/form"); ?>" enctype="multipart/form-data">
+  <form method="post" action="<?php echo base_url("mahasiswa/inputmhs/form"); ?>" enctype="multipart/form-data">
     <!-- 
     -- Buat sebuah input type file
     -- class pull-left berfungsi agar file input berada di sebelah kiri
@@ -42,7 +42,7 @@
     }
     
     // Buat sebuah tag form untuk proses import data ke database
-    echo "<form method='post' action='".base_url("mahasiswa/input/import")."'>";
+    echo "<form method='post' action='".base_url("mahasiswa/inputmhs/import")."'>";
     
     // Buat sebuah div untuk alert validasi kosong
     echo "<div style='color: red;' id='kosong'>
@@ -123,7 +123,7 @@
       
       // Buat sebuah tombol untuk mengimport data ke database
       echo "<button type='submit' name='import'>Import</button>";
-      echo "<a href='".base_url("mahasiswa/input")."'>Cancel</a>";
+      echo "<a href='".base_url("mahasiswa/inputmhs")."'>Cancel</a>";
     }
     
     echo "</form>";

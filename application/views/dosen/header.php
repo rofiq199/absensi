@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Absensi</title>
+	<title>SIP POLIJE</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="<?php echo base_url('assets/img/icon.ico');?>" type="image/x-icon"/>
+	<!-- <link rel="icon" href="<?php echo base_url('assets/img/icon.ico');?>" type="image/x-icon"/> -->
 	<link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/font-awesome.min.css')?>" />
 	
 	<!-- Fonts and icons -->
@@ -54,10 +54,27 @@
 				<div class="container-fluid">
 					
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li>
-						<button type="button" onclick="window.location.href='<?= base_url('absensi/logout') ?>'" class="btn btn-danger">Logout</button>
-						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="<?php echo base_url('assets/img/profile.png')?>" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="<?php echo base_url('assets/img/profile.png')?>" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4><?php echo  $this->session->userdata("nama") ?></h4>
+												<p class="text-muted"><?php echo  $this->session->userdata("username") ?></p><a href="<?= base_url('Auth/logout') ?>" class="btn btn-xs btn-secondary btn-sm">Logout</a>
+											</div>
+										</div>
+									</li>
+								</div>
 							</ul>
+						</li>
+					</ul>
 						
 						
 				</div>
@@ -86,8 +103,8 @@
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('dosen/matkul')?>">
-											<span class="sub-item">Matkul</span>
+										<a href="<?= base_url('dosen/matkuldos')?>">
+											<span class="sub-item">Presensi</span>
 										</a>
 									</li>
 									
