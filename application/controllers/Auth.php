@@ -76,10 +76,7 @@ class Auth extends CI_Controller
 		} else {
 			// echo "Username dan password salah !";
 			$this->session->set_flashdata('message', '<div id=alert class="alert alert-danger alert-dismissible" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-   			<span aria-hidden="true">&times;</span>
-  			</button>
-			<p>Username Atau Password Salah!!!.</p>
+			<strong>Username Atau Password Salah!!!</strong>
 				</div>');
 			redirect(base_url());
 		}
