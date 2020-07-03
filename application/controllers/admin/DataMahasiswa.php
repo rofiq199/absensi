@@ -64,7 +64,7 @@ class DataMahasiswa extends CI_Controller
       //upload gagal
       $this->session->set_flashdata('notif', '<div class="alert alert-danger"><b>PROSES IMPORT GAGAL!</b> ' . $this->upload->display_errors() . '</div>');
       //redirect halaman
-      redirect('admin/datamahasiswa');
+      redirect('admin/DataMahasiswa');
     } else {
 
       $data_upload = $this->upload->data();
