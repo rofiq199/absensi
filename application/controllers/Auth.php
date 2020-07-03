@@ -57,7 +57,7 @@ class Auth extends CI_Controller
 				);
 			}
 			$this->session->set_userdata($data_session);
-			redirect(base_url('dosen/matkuldos'));
+			redirect(base_url('dosen/MatkulDos'));
 			// $this->load->view('home');
 			//login admin
 		} else if ($cekadmin > 0) {
@@ -70,7 +70,7 @@ class Auth extends CI_Controller
 				);
 			}
 			$this->session->set_userdata($data_session);
-			redirect(base_url('admin/datajadwal'));
+			redirect(base_url('admin/DataJadwal'));
 			// $this->load->view('home');
 
 		} else {
