@@ -34,7 +34,7 @@
 									</div>
 									<div class="modal-body">
 										<p class="small">Isi data dengan benar</p>
-										<form action="<?= base_url('admin/datasesi/add'); ?>" method="POST">
+										<form action="<?= base_url('admin/DataSesi/add'); ?>" method="POST">
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="form-group form-group-default">
@@ -81,7 +81,7 @@
 													<button type="button" data-toggle="modal" data-target="#edit<?= $c->kode_waktu ?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 														<i class="fa fa-edit"></i>
 													</button>
-													<button type="button" onclick="window.location.href='<?= base_url('admin/datasesi/hapus/' . $c->kode_waktu); ?>'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="hapus">
+													<button type="button" onclick="window.location.href='<?= base_url('admin/DataSesi/hapus/' . $c->kode_waktu); ?>'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="hapus">
 														<i class="fa fa-times"></i>
 													</button>
 												</div>
@@ -105,7 +105,7 @@
 													</div>
 													<div class="modal-body">
 														<p class="small">Isi data dengan benar</p>
-														<form action="<?= base_url('admin/datasesi/update'); ?>" method="POST">
+														<form action="<?= base_url('admin/DataSesi/update'); ?>" method="POST">
 															<div class="row">
 																<input type="text" name="kode_waktu" hidden value="<?= $c->kode_waktu ?>">
 																<div class="col-sm-12">

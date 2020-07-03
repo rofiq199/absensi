@@ -14,7 +14,7 @@
 											$kode_matkul = $this->uri->segment('4');
 											$golongan = $this->uri->segment('5');
 											$semester = $this->uri->segment('6');?>
-										<button class="btn btn-primary btn-round ml-auto" onclick="window.location.href='<?php echo base_url('admin/rekapabsen/export/'.$kode_matkul.'/'.$golongan.'/'.$semester.'/') ?>'">
+										<button class="btn btn-primary btn-round ml-auto" onclick="window.location.href='<?php echo base_url('admin/RekapAbsen/export/'.$kode_matkul.'/'.$golongan.'/'.$semester.'/') ?>'">
 											<i class="fa fa-plus"></i>
 											Export Pdf
 										</button>

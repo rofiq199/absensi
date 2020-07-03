@@ -35,7 +35,7 @@ class DataPengajar extends CI_Controller
 
     );
     $this->m_admin->add($data, 'pengajar');
-    redirect('admin/datapengajar');
+    redirect('admin/DataPengajar');
   }
   function update()
   {
@@ -51,12 +51,12 @@ class DataPengajar extends CI_Controller
       'nip' => $nip
     );
     $this->m_admin->update($where, $data, 'pengajar');
-    redirect('admin/datapengajar');
+    redirect('admin/DataPengajar');
   }
   function hapus($nip)
   {
     $where = array('pengajar' => $nip);
     $this->m_admin->hapus($where, 'pengajar');
-    redirect('admin/datapengajar');
+    redirect('admin/DataPengajar');
   }
 }

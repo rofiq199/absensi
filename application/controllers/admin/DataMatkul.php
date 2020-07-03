@@ -39,7 +39,7 @@ class DataMatkul extends CI_Controller
       'semester' => $semester
     );
     $this->m_admin->add($data, 'matkul');
-    redirect('admin/datamatkul');
+    redirect('admin/DataMatkul');
   }
   public function update()
   {
@@ -56,12 +56,12 @@ class DataMatkul extends CI_Controller
     );
     $where = array('kode_matkul' => $kode_matkul);
     $this->m_admin->update($where, $data, 'matkul');
-    redirect('admin/datamatkul');
+    redirect('admin/DataMatkul');
   }
   function hapus($kode_matkul)
   {
     $where = array('kode_matkul' => $kode_matkul);
     $this->m_admin->hapus($where, 'matkul');
-    redirect('admin/datamatkul');
+    redirect('admin/DataMatkul');
   }
 }

@@ -32,7 +32,7 @@ class DataSesi extends CI_Controller
       'waktu_selesai' => $waktu_selesai
     );
     $this->m_admin->add($data, 'waktu');
-    redirect('admin/datasesi');
+    redirect('admin/DataSesi');
   }
   public function update()
   {
@@ -45,12 +45,12 @@ class DataSesi extends CI_Controller
     );
     $where = array('kode_waktu' => $kode_waktu);
     $this->m_admin->update($where, $data, 'waktu');
-    redirect('admin/datasesi');
+    redirect('admin/DataSesi');
   }
   function hapus($kode_sesi)
   {
     $where = array('kode_waktu' => $kode_sesi);
     $this->m_admin->hapus($where, 'waktu');
-    redirect('admin/datasesi');
+    redirect('admin/DataSesi');
   }
 }

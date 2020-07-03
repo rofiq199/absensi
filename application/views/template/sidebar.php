@@ -25,7 +25,7 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('dosen/jadwaldos')?>">
+										<a href="<?= base_url('dosen/JadwalDos')?>">
 											<span class="sub-item">Jadwal Kuliah</span>
 										</a>
 									</li>
@@ -41,17 +41,17 @@
 							<div class="collapse show" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('admin/mahasiswa')?>">
+										<a href="<?= base_url('admin/DataMahasiswa')?>">
 											<span class="sub-item">Mahasiswa</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/dosen')?>">
+										<a href="<?= base_url('admin/DataDosen')?>">
 											<span class="sub-item">Dosen</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/matkul')?>">
+										<a href="<?= base_url('admin/DataMatkul')?>">
 											<span class="sub-item">Matkul</span>
 										</a>
 									</li>

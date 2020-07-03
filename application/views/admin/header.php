@@ -38,7 +38,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 
-				<a href="<?= base_url('admin/datajadwal') ?>" class="logo">
+				<a href="<?= base_url('admin/DataJadwal') ?>" class="logo">
 					<span class="fw-mediumbold"> <strong>
 							<font color="white">SIP POLIJE</font>
 						</strong></span>
@@ -112,7 +112,7 @@
 									<?php foreach ($jurusan as $a) {
 									?>
 										<li>
-											<a href="<?= base_url('admin/datarekap/index/' . $a->kode_jurusan); ?>">
+											<a href="<?= base_url('admin/DataRekap/index/' . $a->kode_jurusan); ?>">
 												<span class="sub-item"><?= $a->nama_jurusan ?></span>
 											</a>
 										</li>
@@ -129,12 +129,12 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('admin/datajadwal') ?>">
+										<a href="<?= base_url('admin/DataJadwal') ?>">
 											<span class="sub-item">Lihat Jadwal</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/datasesi') ?>">
+										<a href="<?= base_url('admin/DataSesi') ?>">
 											<span class="sub-item">Sesi</span>
 										</a>
 									</li>
@@ -150,32 +150,32 @@
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('admin/datamahasiswa') ?>">
+										<a href="<?= base_url('admin/DataMahasiswa') ?>">
 											<span class="sub-item">Mahasiswa</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/datadosen') ?>">
+										<a href="<?= base_url('admin/DataDosen') ?>">
 											<span class="sub-item">Dosen</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/datamatkul') ?>">
+										<a href="<?= base_url('admin/DataMatkul') ?>">
 											<span class="sub-item">Matkul</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/dataprodi') ?>">
+										<a href="<?= base_url('admin/DataProdi') ?>">
 											<span class="sub-item">Prodi</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/datajurusan') ?>">
+										<a href="<?= base_url('admin/DataJurusan') ?>">
 											<span class="sub-item">Jurusan</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?= base_url('admin/datapengajar') ?>">
+										<a href="<?= base_url('admin/DataPengajar') ?>">
 											<span class="sub-item">Pengajar</span>
 										</a>
 									</li>

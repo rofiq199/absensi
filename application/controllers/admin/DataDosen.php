@@ -36,7 +36,7 @@ class DataDosen extends CI_Controller
       'nama_dosen' => $nama_dosen
     );
     $this->m_admin->add($data, 'dosen');
-    redirect('admin/datadosen');
+    redirect('admin/DataDosen');
   }
   function update()
   {
@@ -55,12 +55,12 @@ class DataDosen extends CI_Controller
       'nip' => $nip
     );
     $this->m_admin->update($where, $data, 'dosen');
-    redirect('admin/datadosen');
+    redirect('admin/DataDosen');
   }
   function hapus($nip)
   {
     $where = array('nip' => $nip);
     $this->m_admin->hapus($where, 'dosen');
-    redirect('admin/datadosen');
+    redirect('admin/DataDosen');
   }
 }

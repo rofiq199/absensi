@@ -40,7 +40,7 @@ class DataMahasiswa extends CI_Controller
       'semester' => $semester
     );
     $this->m_admin->add($data, 'mahasiswa');
-    redirect('admin/datamahasiswa');
+    redirect('admin/DataMahasiswa');
   }
 
   public function download()
@@ -96,7 +96,7 @@ class DataMahasiswa extends CI_Controller
       //upload success
       $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES IMPORT BERHASIL!</b> Data berhasil diimport!</div>');
       //redirect halaman
-      redirect('admin/datamahasiswa');
+      redirect('admin/DataMahasiswa');
     }
   }
   function update()
@@ -119,12 +119,12 @@ class DataMahasiswa extends CI_Controller
       'nim' => $nim
     );
     $this->m_admin->update($where, $data, 'mahasiswa');
-    redirect('admin/datamahasiswa');
+    redirect('admin/DataMahasiswa');
   }
   function hapus($nim)
   {
     $where = array('nim' => $nim);
     $this->m_admin->hapus($where, 'mahasiswa');
-    redirect('admin/datamahasiswa');
+    redirect('admin/DataMahasiswa');
   }
 }

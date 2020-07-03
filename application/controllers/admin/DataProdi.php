@@ -34,7 +34,7 @@ class DataProdi extends CI_Controller
       'kode_jurusan' => $jurusan
     );
     $this->m_admin->add($data, 'prodi');
-    redirect('admin/dataprodi');
+    redirect('admin/DataProdi');
   }
   function update()
   {
@@ -51,12 +51,12 @@ class DataProdi extends CI_Controller
       'kode_prodi' => $kode_prodi
     );
     $this->m_admin->update($where, $data, 'prodi');
-    redirect('admin/dataprodi');
+    redirect('admin/DataProdi');
   }
   function hapus($kode_prodi)
   {
     $where = array('kode_prodi' => $kode_prodi);
     $this->m_admin->hapus($where, 'prodi');
-    redirect('admin/dataprodi');
+    redirect('admin/DataProdi');
   }
 }

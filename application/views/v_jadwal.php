@@ -1,5 +1,5 @@
 <h1>Data Gambar</h1><hr>
-<a href="<?php echo base_url("gambar/tambah"); ?>">Tambah Gambar</a><br><br>
+<a href="<?php echo base_url("Gambar/tambah"); ?>">Tambah Gambar</a><br><br>
 <table border="1" cellpadding="8">
 <tr>
   <th>No</th>
@@ -12,7 +12,6 @@
 if( ! empty($gambar)){ // Jika data pada database tidak sama dengan empty (alias ada datanya)
   foreach($gambar as $data){ // Lakukan looping pada variabel gambar dari controller
     echo "<tr>";
-    echo "<td>".$data->."</td>";
     echo "<td>".$data->deskripsi."</td>";
     echo "<td>".$data->nama_file."</td>";
     echo "<td>".$data->ukuran_file." kB</td>";

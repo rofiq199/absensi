@@ -34,7 +34,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Dosen dengan benar</p>
-													<form action="<?= base_url('admin/datapengajar/add');?>" method="POST">
+													<form action="<?= base_url('admin/DataPengajar/add');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12 pr-0">
 																<div class="form-group form-group-default">
@@ -100,7 +100,7 @@
 															<button type="button" data-toggle="modal" data-target="#edit<?= $c->pengajar?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button" onclick="window.location.href='<?= base_url('admin/datapengajar/hapus/'.$c->pengajar); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+															<button type="button" onclick="window.location.href='<?= base_url('admin/DataPengajar/hapus/'.$c->pengajar); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
@@ -124,7 +124,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Dosen dengan benar</p>
-													<form action="<?= base_url('admin/datapengajar/update');?>" method="POST">
+													<form action="<?= base_url('admin/DataPengajar/update');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12 pr-0">
 																<div class="form-group form-group-default">

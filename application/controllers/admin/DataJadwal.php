@@ -41,7 +41,7 @@ class DataJadwal extends CI_Controller
       'golongan' => $golongan
     );
     $this->m_admin->add($data, 'jadwal');
-    redirect('admin/datajadwal');
+    redirect('admin/DataJadwal');
   }
 
   function update()
@@ -65,12 +65,12 @@ class DataJadwal extends CI_Controller
       'kode_jadwal' => $kode_jadwal
     );
     $this->m_admin->update($where, $data, 'jadwal');
-    redirect('admin/datajadwal');
+    redirect('admin/DataJadwal');
   }
   function hapus($kode_jadwal)
   {
     $where = array('kode_jadwal' => $kode_jadwal);
     $this->m_admin->hapus($where, 'jadwal');
-    redirect('admin/datajadwal');
+    redirect('admin/DataJadwal');
   }
 }

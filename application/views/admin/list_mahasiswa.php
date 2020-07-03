@@ -38,7 +38,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Import data Mahasiswa sesuai dengan format yang ditentukan</p>
-													<form action="<?= base_url('admin/datamahasiswa/upload');?>" method="POST" enctype="multipart/form-data">
+													<form action="<?= base_url('admin/DataMahasiswa/upload');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 														<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
@@ -48,7 +48,7 @@
 															</div>
 															<div class="col-md-6 ">
 																<div class="form-group form-group-default">
-																	<center><a href="<?=base_url('admin/datamahasiswa/download')?>"> Silahkan Download Format Excel</a></center>
+																	<center><a href="<?=base_url('admin/DataMahasiswa/download')?>"> Silahkan Download Format Excel</a></center>
 																</div>
 															</div>
 												<div class="modal-footer no-bd">
@@ -80,7 +80,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form action="<?= base_url('admin/datamahasiswa/add');?>" method="POST" enctype="multipart/form-data">
+													<form action="<?= base_url('admin/DataMahasiswa/add');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
@@ -178,7 +178,7 @@
 															<button type="button" data-toggle="modal" data-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg" data-target="#edit<?= $c->nim ?>" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button"  onclick="window.location.href='<?= base_url('admin/datamahasiswa/hapus/'.$c->nim); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Hapus">
+															<button type="button"  onclick="window.location.href='<?= base_url('admin/DataMahasiswa/hapus/'.$c->nim); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Hapus">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
@@ -203,7 +203,7 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Isi data Mahasiswa dengan benar</p>
-													<form action="<?= base_url('admin/datamahasiswa/update');?>" method="POST" enctype="multipart/form-data">
+													<form action="<?= base_url('admin/DataMahasiswa/update');?>" method="POST" enctype="multipart/form-data">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">

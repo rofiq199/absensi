@@ -103,7 +103,7 @@
 							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?= base_url('dosen/matkuldos')?>">
+										<a href="<?= base_url('dosen/MatkulDos')?>">
 											<span class="sub-item">Presensi</span>
 										</a>
 									</li>

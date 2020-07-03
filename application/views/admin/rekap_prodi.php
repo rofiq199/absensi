@@ -43,7 +43,7 @@
 											<td><?= $a->nama_prodi ?></td>
 											<?php for ($i = 1; $i <= 8; $i++) {
 											?>
-												<td><a href="<?php echo base_url("admin/datarekap/show/" . $a->kode_prodi . "/" . $i) ?>"><?= $a->kode_prodi ?><?= $i; ?></a></td>
+												<td><a href="<?php echo base_url("admin/DataRekap/show/" . $a->kode_prodi . "/" . $i) ?>"><?= $a->kode_prodi ?><?= $i; ?></a></td>
 											<?php } ?>
 										</tr>
 
