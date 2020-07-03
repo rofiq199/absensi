@@ -42,7 +42,7 @@
 											foreach ($golongan as $i) {
 
 											?>
-												<td><a href="<?php echo base_url("admin/rekapabsen/index/" . $a->kode_matkul . "/" . $i . "/" . $a->semester) ?>"><?= $a->kode_matkul ?>/<?= $i; ?></a></td>
+												<td><a href="<?php echo base_url("admin/RekapAbsen/index/" . $a->kode_matkul . "/" . $i . "/" . $a->semester) ?>"><?= $a->kode_matkul ?>/<?= $i; ?></a></td>
 											<?php } ?>
 										</tr>
 

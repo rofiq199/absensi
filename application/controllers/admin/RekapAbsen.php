@@ -8,7 +8,7 @@ class RekapAbsen extends CI_Controller
         parent::__construct();
 
         $this->load->model('m_admin');
-        $this->load->library('cetak_pdf');
+        $this->load->library('Cetak_Pdf');
     }
 
     public function index()
