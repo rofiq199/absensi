@@ -27,7 +27,7 @@
 									<?php foreach ($hak as $a) {
 									?>
 										<tr>
-											<td class="mx-0"><a href="<?php echo base_url("dosen/MatkulDos/qrcode/" . $a->kode_matkul) ?>"><?= $a->nama_matkul ?></a></td>
+											<td class="mx-0"><?= $a->nama_matkul ?></td>
 											<?php foreach ($pertemuan as $c) {
 											?>
 												<td><a href="<?php echo base_url("dosen/MatkulDos/qrcode/" . $a->kode_matkul . "/" . $c->minggu) ?>"><?= $c->minggu ?></a></td>

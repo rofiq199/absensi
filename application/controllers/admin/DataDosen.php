@@ -63,4 +63,5 @@ class DataDosen extends CI_Controller
     $this->m_admin->hapus($where, 'dosen');
     redirect('admin/DataDosen');
   }
+  
 }

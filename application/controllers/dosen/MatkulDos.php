@@ -56,13 +56,14 @@ class MatkulDos extends CI_Controller
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
-        redirect('dosen/MatkulDos/tampil/' . $id); //redirect ke pegawai usai simpan data
+        redirect('dosen/MatkulDos/show/' . $id); //redirect ke pegawai usai simpan data
     }
     public function tampil($id)
     {
         if ($this->m_dosen->logged_id()) {
             $where = array('id' => $id);
             $data['matkul'] = $this->m_dosen->get_where('qrdata', $where)->result();
+            $data['show']= $this->m_dosen->get_where('absen',$where)->result();
             $this->load->view('dosen/header');
             $this->load->view('dosen/tampil', $data);
             $this->load->view('dosen/footer');
@@ -70,10 +71,18 @@ class MatkulDos extends CI_Controller
             redirect("Auth");
         }
     }
-    public function uri()
+    public function show($id)
     {
-        echo $this->uri->segment('4') . "<br>";
-        echo $this->uri->segment('5') . "<br>";
-        echo uniqid();
+        if ($this->m_dosen->logged_id()) {
+            $where = array('id' => $id);
+            $where1 = array('id_pertemuan' => $id);
+            $data['matkul'] = $this->m_dosen->get_where('qrdata', $where)->result();
+            $data['show']= $this->m_dosen->get_where('absen',$where1)->result();
+            $this->load->view('dosen/header');
+            $this->load->view('dosen/qrcode',$data);
+            $this->load->view('dosen/footer');
+        } else {
+            redirect("Auth");
+        }
     }
 }

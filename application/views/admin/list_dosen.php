@@ -1,3 +1,9 @@
+<script type="text/javascript">
+	setInterval("my_function();",500); 
+    function my_function(){
+      $('.main-panel').load(location.href + ' .content');
+    }
+</script>
 <div class="main-panel">
 			<div class="content">
 				<div class="page-inner">

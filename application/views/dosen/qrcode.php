@@ -1,18 +1,33 @@
-<div class="main_panel">
+<script type="text/javascript">
+	setInterval("my_function();",500); 
+    function my_function(){
+      $('.card-body').load(location.href + ' .absen');
+    }
+</script>
+<div class="main-panel">
 	<div class="content">
 		<div class="page-inner">
 			<div class="page-header">
 				<h4 class="page-title">Matkul </h4>
-				<?php foreach ($matkul as $data) {
+              
+			</div>
+            <?php foreach ($matkul as $data) {
 				?>
-					<p><?= $data->kode_matkul ?></p>
 					<center>
 						<h4><?= $data->kode_matkul ?></h4>
 					</center>
 					<center><img src="<?php echo base_url('images/' . $data->id . '.png') ?>" heigh="300px" width="300px" alt=""></center>
 				<?php } ?>
-			<div class="data">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="d-flex align-items-center">
+							<h4 class="card-title">List Absen</h4>
+                            </div>
+					</div>
+			<div class="card-body">
 				<div class="absen">
+                
 				<div class="table-responsive">
 				<table id="add-row" class="display table table-striped table-hover" >
 											<thead>
@@ -70,13 +85,13 @@
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Isi data Dosen dengan benar</p>
+													<p class="small">Ganti Status Absen</p>
 													<form action="<?= base_url('admin/DataDosen/update');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>NIP</label>
-																	<input type="text" hidden value="<?= $c->nip?>" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
+																	<input type="text" hidden value="<?= $c->nim?>" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
 																</div>
 															</div>
 														</div>
@@ -92,9 +107,11 @@
 												<?php }?>
 											</tbody>
 										</table>
+				    </div>
+				    </div>
+			        </div>
+				
 				</div>
-				</div>
-			</div>
 			</div>
 		</div>
 	</div>

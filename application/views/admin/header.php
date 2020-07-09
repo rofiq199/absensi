@@ -7,6 +7,7 @@
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<!-- <link rel="icon" href="<?php echo base_url('assets/img/icon.ico'); ?>" type="image/x-icon" /> -->
 	<link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/font-awesome.min.css') ?>" />
+	<script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js');?>"></script>
 
 	<!-- Fonts and icons -->
 	<script src="<?php echo base_url('assets/js/plugin/webfont/webfont.min.js'); ?>"></script>
