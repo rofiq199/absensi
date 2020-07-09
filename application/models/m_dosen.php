@@ -26,4 +26,11 @@ class M_dosen extends CI_Model
     {
         $this->db->insert($table, $data);
     }
+    public function join_tabel($tabel1,$tabel2,$join,$where)
+    {
+        return $this->db->from($tabel1)
+            ->join($tabel2, $join)
+            ->where($where)
+            ->get();
+    }
 }

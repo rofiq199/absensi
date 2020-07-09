@@ -1,7 +1,14 @@
 <script type="text/javascript">
-	setInterval("my_function();",500); 
-    function my_function(){
+	var auto_refresh = setInterval('refresh()',500); 
+  
+    function refresh(){
       $('.card-body').load(location.href + ' .absen');
+      }
+    function stop(){
+  clearInterval(auto_refresh);
+    }
+    function run(){
+        setInterval('refresh()',500);
     }
 </script>
 <div class="main-panel">
@@ -33,6 +40,7 @@
 											<thead>
 												<tr>
 													<th>NIM</th>
+                                                    <th>Nama</th>
 													<th>Golongan</th>
 													<th>Waktu</th>
 													<th>Keterangan</th>
@@ -42,6 +50,7 @@
 											<tfoot>
 												<tr>
 												<th>NIM</th>
+                                                <th>Nama</th>
 													<th>Golongan</th>
 													<th>Waktu</th>
 													<th>Keterangan</th>
@@ -50,19 +59,20 @@
 											</tfoot>
 											<tbody>
 												<?php 
-												foreach ($show as $c) {
+												foreach ($tampil as $c) {
 												?>
 												<tr>
 													<td><?=$c->nim?></td>
+                                                    <td><?=$c->nama_mahasiswa?></td>
 													<td><?=$c->golongan_absen?></td>
 													<td><?= $c->tanggal_absen ?></td>
 													<td><?= $c->status ?></td>
 													<td>
 														<div class="form-button-action">
-															<button type="button" data-toggle="modal" data-target="#edit<?= $c->nim?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+															<button type="button" onclick="stop()" id="edit" data-toggle="modal" data-target="#edit<?= $c->nim?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button" onclick="window.location.href='<?= base_url('admin/DataDosen/hapus/'.$c->nim); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+															<button type="button" id="delete" onclick="window.location.href='<?= base_url('admin/DataDosen/hapus/'.$c->nim); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>
@@ -75,30 +85,26 @@
 												<div class="modal-header no-bd">
 													<h5 class="modal-title">
 														<span class="fw-mediumbold">
-														Tambah</span> 
-														<span class="fw-light">
-															Dosen
-														</span>
+														Ganti Status Absen</span> 
 													</h5>
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<button type="button" onclick="run()" class="close" data-dismiss="modal" aria-label="Close">
 														<span aria-hidden="true">&times;</span>
 													</button>
 												</div>
 												<div class="modal-body">
-													<p class="small">Ganti Status Absen</p>
 													<form action="<?= base_url('admin/DataDosen/update');?>" method="POST">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>NIP</label>
-																	<input type="text" hidden value="<?= $c->nim?>" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
+																	<label>NIM</label>
+																	<input type="text" value="<?= $c->nim?>" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
 																</div>
 															</div>
 														</div>
 												</div>
 												<div class="modal-footer no-bd">
-													<input type="submit" value="Tambah" class="btn btn-primary">
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													<input onclick="run()" type="submit" value="Tambah" class="btn btn-primary">
+													<button onclick="run()" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
 											</form>

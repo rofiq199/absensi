@@ -78,6 +78,7 @@ class MatkulDos extends CI_Controller
             $where1 = array('id_pertemuan' => $id);
             $data['matkul'] = $this->m_dosen->get_where('qrdata', $where)->result();
             $data['show']= $this->m_dosen->get_where('absen',$where1)->result();
+            $data['tampil']=$this->m_dosen->join_tabel('absen','mahasiswa','absen.nim=mahasiswa.nim',$where1)->result();
             $this->load->view('dosen/header');
             $this->load->view('dosen/qrcode',$data);
             $this->load->view('dosen/footer');
