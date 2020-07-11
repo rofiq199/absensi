@@ -1,10 +1,6 @@
-<script type="text/javascript">
-	setInterval("my_function();",500); 
-    function my_function(){
-      $('.main-panel').load(location.href + ' .content');
-    }
-</script>
+
 <div class="main-panel">
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash');?>"></div>
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
@@ -111,9 +107,9 @@
 															<button type="button" data-toggle="modal" data-target="#edit<?= $c->nip?>" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button" onclick="window.location.href='<?= base_url('admin/DataDosen/hapus/'.$c->nip); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+															<a class="btn btn-link btn-danger tombol-hapus" onclick="hapus()" href='<?= base_url('admin/DataDosen/hapus/'.$c->nip); ?>'  data-toggle="tooltip" title="" data-original-title="Remove">
 																<i class="fa fa-times"></i>
-															</button>
+															</a>
 														</div>
 													</td>
 												</tr>

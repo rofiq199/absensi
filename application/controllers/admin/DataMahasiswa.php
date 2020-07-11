@@ -40,6 +40,8 @@ class DataMahasiswa extends CI_Controller
       'semester' => $semester
     );
     $this->m_admin->add($data, 'mahasiswa');
+    
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataMahasiswa');
   }
 
@@ -94,7 +96,7 @@ class DataMahasiswa extends CI_Controller
       unlink(realpath('excel/' . $data_upload['file_name']));
 
       //upload success
-      $this->session->set_flashdata('notif', '<div class="alert alert-success"><b>PROSES IMPORT BERHASIL!</b> Data berhasil diimport!</div>');
+    $this->session->set_flashdata('flash','Diimport');
       //redirect halaman
       redirect('admin/DataMahasiswa');
     }
@@ -119,12 +121,16 @@ class DataMahasiswa extends CI_Controller
       'nim' => $nim
     );
     $this->m_admin->update($where, $data, 'mahasiswa');
+    
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataMahasiswa');
   }
   function hapus($nim)
   {
     $where = array('nim' => $nim);
     $this->m_admin->hapus($where, 'mahasiswa');
+    
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataMahasiswa');
   }
 }

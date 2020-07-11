@@ -31,6 +31,8 @@ class DataJurusan extends CI_Controller
       'nama_jurusan' => $nama_jurusan
     );
     $this->m_admin->add($data, 'jurusan');
+    
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataJurusan');
   }
   function update()
@@ -46,12 +48,16 @@ class DataJurusan extends CI_Controller
       'kode_jurusan' => $kode_jurusan
     );
     $this->m_admin->update($where, $data, 'jurusan');
+    
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataJurusan');
   }
   function hapus($kode_jurusan)
   {
     $where = array('kode_jurusan' => $kode_jurusan);
     $this->m_admin->hapus($where, 'jurusan');
+    
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataJurusan');
   }
 }

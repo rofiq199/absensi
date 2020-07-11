@@ -35,6 +35,7 @@ class DataPengajar extends CI_Controller
 
     );
     $this->m_admin->add($data, 'pengajar');
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataPengajar');
   }
   function update()
@@ -51,12 +52,14 @@ class DataPengajar extends CI_Controller
       'nip' => $nip
     );
     $this->m_admin->update($where, $data, 'pengajar');
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataPengajar');
   }
   function hapus($nip)
   {
     $where = array('pengajar' => $nip);
     $this->m_admin->hapus($where, 'pengajar');
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataPengajar');
   }
 }

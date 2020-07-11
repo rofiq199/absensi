@@ -36,6 +36,7 @@ class DataDosen extends CI_Controller
       'nama_dosen' => $nama_dosen
     );
     $this->m_admin->add($data, 'dosen');
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataDosen');
   }
   function update()
@@ -55,12 +56,14 @@ class DataDosen extends CI_Controller
       'nip' => $nip
     );
     $this->m_admin->update($where, $data, 'dosen');
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataDosen');
   }
   function hapus($nip)
   {
     $where = array('nip' => $nip);
     $this->m_admin->hapus($where, 'dosen');
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataDosen');
   }
   

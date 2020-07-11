@@ -41,6 +41,8 @@ class DataJadwal extends CI_Controller
       'golongan' => $golongan
     );
     $this->m_admin->add($data, 'jadwal');
+    
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataJadwal');
   }
 
@@ -65,12 +67,16 @@ class DataJadwal extends CI_Controller
       'kode_jadwal' => $kode_jadwal
     );
     $this->m_admin->update($where, $data, 'jadwal');
+    
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataJadwal');
   }
   function hapus($kode_jadwal)
   {
     $where = array('kode_jadwal' => $kode_jadwal);
     $this->m_admin->hapus($where, 'jadwal');
+    
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataJadwal');
   }
 }

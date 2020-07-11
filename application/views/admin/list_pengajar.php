@@ -1,4 +1,5 @@
 <div class="main-panel">
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash');?>"></div>
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">

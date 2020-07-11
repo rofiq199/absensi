@@ -1,5 +1,6 @@
 <div class="main-panel">
 			<div class="content">
+			<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash');?>"></div>
 				<div class="page-inner">
 					<div class="page-header">
 						<h4 class="page-title">List Jurusan</h4>

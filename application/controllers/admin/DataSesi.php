@@ -32,6 +32,7 @@ class DataSesi extends CI_Controller
       'waktu_selesai' => $waktu_selesai
     );
     $this->m_admin->add($data, 'waktu');
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataSesi');
   }
   public function update()
@@ -45,12 +46,14 @@ class DataSesi extends CI_Controller
     );
     $where = array('kode_waktu' => $kode_waktu);
     $this->m_admin->update($where, $data, 'waktu');
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataSesi');
   }
   function hapus($kode_sesi)
   {
     $where = array('kode_waktu' => $kode_sesi);
     $this->m_admin->hapus($where, 'waktu');
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataSesi');
   }
 }
