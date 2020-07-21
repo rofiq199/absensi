@@ -6,6 +6,4 @@ if (flashData) {
         'success'
     );
 }
-function hapus(e) {
-    e.preventDefault();
-}
+

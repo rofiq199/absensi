@@ -1,3 +1,24 @@
+<script>
+$('document').ready(function(){
+$('.tombolhapus').on('click',function (e) {
+    var hapusdata = $('.tombolhapus').data('hapus');
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data akan dihapus secara permanen",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+		confirmButtonText: 'Yakin!',
+		cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = hapusdata
+        }
+    })
+})
+})
+</script>
 <div class="main-panel">
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash');?>"></div>
 			<div class="content">
@@ -179,7 +200,7 @@
 															<button type="button" data-toggle="modal" data-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg" data-target="#edit<?= $c->nim ?>" data-original-title="Edit Task">
 																<i class="fa fa-edit"></i>
 															</button>
-															<button type="button"  onclick="window.location.href='<?= base_url('admin/DataMahasiswa/hapus/'.$c->nim); ?>'"  data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Hapus">
+															<button type="button"  data-hapus="<?= base_url('admin/DataMahasiswa/hapus/'.$c->nim); ?>"  data-toggle="tooltip" title="" class="btn btn-link btn-danger tombolhapus" data-original-title="Hapus">
 																<i class="fa fa-times"></i>
 															</button>
 														</div>

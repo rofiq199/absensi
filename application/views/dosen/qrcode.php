@@ -1,4 +1,5 @@
 <script type="text/javascript">
+	$("document").ready(function(){
 	var auto_refresh = setInterval('refresh()',500); 
   
     function refresh(){
@@ -10,6 +11,11 @@
     function run(){
         setInterval('refresh()',500);
     }
+	
+		$('.form-button-action').click(function() {
+			clearInterval(auto_refresh);
+		})
+	})
 </script>
 <div class="main-panel">
 	<div class="content">
@@ -96,15 +102,20 @@
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
-																	<label>NIM</label>
-																	<input type="text" value="<?= $c->nim?>" name="nip" class="form-control" placeholder="Masukkan Nip Dosen">
+																	<label>Status</label>
+																	<select name="status" class="form-control" >
+																	<option value="H">H</option>
+																	<option value="I">I</option>
+																	<option value="S">S</option>
+																	<option value="A">A</option>
+																	</select>
 																</div>
 															</div>
 														</div>
 												</div>
 												<div class="modal-footer no-bd">
-													<input onclick="run()" type="submit" value="Tambah" class="btn btn-primary">
-													<button onclick="run()" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													<input type="submit" value="Tambah" class="btn btn-primary">
+													<button  onclick="run()" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
 											</form>

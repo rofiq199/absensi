@@ -10,6 +10,7 @@
 	
 	
 	<script src="<?php echo base_url('assets/js/core/jquery.3.2.1.min.js');?>"></script>
+	
 	<!-- Fonts and icons -->
 	<script src="<?php echo base_url('assets/js/plugin/webfont/webfont.min.js'); ?>"></script>
 	<script>

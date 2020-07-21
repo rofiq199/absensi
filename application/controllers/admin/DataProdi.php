@@ -34,6 +34,7 @@ class DataProdi extends CI_Controller
       'kode_jurusan' => $jurusan
     );
     $this->m_admin->add($data, 'prodi');
+    $this->session->set_flashdata('flash','Ditambahkan');
     redirect('admin/DataProdi');
   }
   function update()
@@ -51,12 +52,14 @@ class DataProdi extends CI_Controller
       'kode_prodi' => $kode_prodi
     );
     $this->m_admin->update($where, $data, 'prodi');
+    $this->session->set_flashdata('flash','Diubah');
     redirect('admin/DataProdi');
   }
   function hapus($kode_prodi)
   {
     $where = array('kode_prodi' => $kode_prodi);
     $this->m_admin->hapus($where, 'prodi');
+    $this->session->set_flashdata('flash','Dihapus');
     redirect('admin/DataProdi');
   }
 }

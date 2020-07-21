@@ -86,4 +86,26 @@ class MatkulDos extends CI_Controller
             redirect("Auth");
         }
     }
+    function update()
+    {
+      $nim = $this->input->post('nip');
+      $status = $this->input->post('status');
+  
+      $data = array(
+        'status' => $status
+    );
+  
+      $where = array(
+        'nim' => $nim
+      );
+      $this->m_admin->update($where, $data, 'dosen');
+      redirect('dosen');
+    }
+    function hapus($nip)
+    {
+      $where = array('nip' => $nip);
+      $this->m_admin->hapus($where, 'dosen');
+      $this->session->set_flashdata('flash','Dihapus');
+      redirect('admin/DataDosen');
+    }
 }
